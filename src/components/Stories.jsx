@@ -1,7 +1,7 @@
 import { IoMdClose } from "react-icons/io";
 import { BsFillPlusCircleFill } from "react-icons/bs";
 
-const Stories = ({ stories, selectedUserIndex, handleOpenStory, currentStoryIndex, progress, handleCloseStory, handleStoryClick, handleTouchStart, handleTouchEnd, imageLoading, setImageLoading }) => {
+const Stories = ({ stories, selectedUserIndex, handleOpenStory, currentStoryIndex, progress, handleCloseStory, handleStoryClick, handleTouchStart, handleTouchEnd, imageLoading, setImageLoading, loading }) => {
     return (
         <div>
             {selectedUserIndex === null ? (
@@ -14,27 +14,32 @@ const Stories = ({ stories, selectedUserIndex, handleOpenStory, currentStoryInde
                         </div>
                         <p className="text-xs text-center mt-2 w-20 truncate text-gray-600">Your story</p>
                     </div>
-
-                    {stories.map((user, index) => (
-                        <div
-                            key={user.id}
-                            onClick={() => handleOpenStory(index)}
-                            className="flex-shrink-0 cursor-pointer"
-                        >
-                            <div className="relative">
-                                <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-yellow-400 to-pink-600 p-0.5">
-                                    <div className="w-full h-full rounded-full p-0.5">
-                                        <img
-                                            src={user.avatar}
-                                            alt={user.username}
-                                            className="w-full h-full rounded-full object-cover"
-                                        />
+                    {loading ? <div className="w-10 h-10 border-3 border-t-transparent rounded-full animate-spin"></div>
+                        :
+                        <>
+                            {stories.map((user, index) => (
+                                <div
+                                    key={user.id}
+                                    onClick={() => handleOpenStory(index)}
+                                    className="flex-shrink-0 cursor-pointer"
+                                >
+                                    <div className="relative">
+                                        <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-yellow-400 to-pink-600 p-0.5">
+                                            <div className="w-full h-full rounded-full p-0.5">
+                                                <img
+                                                    src={user.avatar}
+                                                    alt={user.username}
+                                                    className="w-full h-full rounded-full object-cover"
+                                                />
+                                            </div>
+                                        </div>
                                     </div>
+                                    <p className="text-xs text-center mt-2 w-20 truncate text-gray-600">{user.username}</p>
                                 </div>
-                            </div>
-                            <p className="text-xs text-center mt-2 w-20 truncate text-gray-600">{user.username}</p>
-                        </div>
-                    ))}
+                            ))}
+                        </>
+                    }
+
                 </div>
             ) : (
                 <div className="fixed inset-0 bg-black z-50">

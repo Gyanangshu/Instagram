@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { LuHeart, LuPlus, LuSquarePlay, LuSearch } from "react-icons/lu";
 import { GoHomeFill } from "react-icons/go";
 import { BsSend } from "react-icons/bs";
+
 import Stories from './components/Stories';
 
 const InstaStories = () => {
@@ -142,13 +143,8 @@ const InstaStories = () => {
             </div>
 
             {/* Stories */}
-            {loading ?
-                <div className='flex items-center justify-between w-full'>
-                    <div className="w-10 h-10 border-3 border-t-transparent rounded-full animate-spin"></div>
-                </div>
-                :
-                <Stories stories={stories} selectedUserIndex={selectedUserIndex} handleOpenStory={handleOpenStory} currentStoryIndex={currentStoryIndex} progress={progress} handleCloseStory={handleCloseStory} handleStoryClick={handleStoryClick} handleTouchStart={handleTouchStart} handleTouchEnd={handleTouchEnd} imageLoading={imageLoading} setImageLoading={setImageLoading} />
-            }
+            <Stories stories={stories} selectedUserIndex={selectedUserIndex} handleOpenStory={handleOpenStory} currentStoryIndex={currentStoryIndex} progress={progress} handleCloseStory={handleCloseStory} handleStoryClick={handleStoryClick} handleTouchStart={handleTouchStart} handleTouchEnd={handleTouchEnd} imageLoading={imageLoading} setImageLoading={setImageLoading} loading={loading} />
+
 
             {/* footer */}
             <div className='absolute bottom-0 max-w-md w-full border-t border-gray-200'>
