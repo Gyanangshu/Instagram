@@ -1,5 +1,6 @@
 import { IoMdClose } from "react-icons/io";
 import { BsFillPlusCircleFill } from "react-icons/bs";
+import profileImg from "../Image/profile.webp"
 
 const Stories = ({ stories, selectedUserIndex, handleOpenStory, currentStoryIndex, progress, handleCloseStory, handleStoryClick, handleTouchStart, handleTouchEnd, imageLoading, setImageLoading, loading }) => {
     return (
@@ -8,7 +9,7 @@ const Stories = ({ stories, selectedUserIndex, handleOpenStory, currentStoryInde
                 <div className="flex items-center gap-4 overflow-x-auto p-4 scrollbar-hide">
                     <div>
                         <div className="relative">
-                            <img loading='lazy' src="https://media.licdn.com/dms/image/v2/D4D03AQFcmjmz0Lib7Q/profile-displayphoto-shrink_800_800/B4DZZtYkErH4Ag-/0/1745591878522?e=1761782400&v=beta&t=OWcMB4SqWI74QUlqewnJTAk-_zfbj38Di0WkoSz_GYE" alt="profile" className='w-20 h-20 rounded-full' />
+                            <img loading='lazy' src={profileImg} alt="profile" className='w-20 h-20 rounded-full' />
 
                             <BsFillPlusCircleFill className="absolute bottom-0 right-0 bg-white p-0.5 rounded-full text-xl" />
                         </div>

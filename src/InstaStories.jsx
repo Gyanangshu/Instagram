@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from 'react';
 import { LuHeart, LuPlus, LuSquarePlay, LuSearch } from "react-icons/lu";
 import { GoHomeFill } from "react-icons/go";
 import { BsSend } from "react-icons/bs";
-
+import profileImg from "./Image/profile.webp"
 import Stories from './components/Stories';
 
 const InstaStories = () => {
@@ -153,7 +153,7 @@ const InstaStories = () => {
                     <LuSquarePlay className='text-2xl' />
                     <BsSend className='text-2xl' />
                     <LuSearch className='text-2xl' />
-                    <img loading='lazy' src="https://media.licdn.com/dms/image/v2/D4D03AQFcmjmz0Lib7Q/profile-displayphoto-shrink_800_800/B4DZZtYkErH4Ag-/0/1745591878522?e=1761782400&v=beta&t=OWcMB4SqWI74QUlqewnJTAk-_zfbj38Di0WkoSz_GYE" alt="profile" className='w-7 rounded-full' />
+                    <img loading='lazy' src={profileImg} alt="profile" className='w-7 rounded-full' />
                 </div>
             </div>
         </main>
